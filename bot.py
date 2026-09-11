@@ -11,6 +11,7 @@ logging.basicConfig(level=logging.INFO)
 
 bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
+
 kb_menu = InlineKeyboardMarkup(row_width=2)
 kb_menu.add(
     InlineKeyboardButton("Каталог", callback_data="catalog"),
@@ -62,6 +63,7 @@ kb_oxide_ios.add(
     InlineKeyboardButton("CERTIFICATE", callback_data="cheat:certificate_oxide"),
 )
 kb_oxide_ios.add(InlineKeyboardButton("Назад", callback_data="oxide"))
+
 kb_zolo = InlineKeyboardMarkup(row_width=1)
 kb_zolo.add(
     InlineKeyboardButton("ZOLO 1 день | 150Р", callback_data="buy_t:ZOLO 1 день:150:zolo"),
@@ -92,6 +94,7 @@ kb_maximus.add(
     InlineKeyboardButton("MAXIMUS 60 дней | 1650Р", callback_data="buy_t:MAXIMUS 60 дней:1650:maximus"),
 )
 kb_maximus.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
+
 kb_inferno = InlineKeyboardMarkup(row_width=1)
 kb_inferno.add(
     InlineKeyboardButton("INFERNO 1 день | 220Р", callback_data="buy_t:INFERNO 1 день:220:inferno"),
@@ -122,6 +125,7 @@ kb_jarvis.add(
     InlineKeyboardButton("JARVIS MOD 60 дней | 1150Р", callback_data="buy_t:JARVIS MOD 60 дней:1150:jarvis"),
 )
 kb_jarvis.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
+
 kb_dream = InlineKeyboardMarkup(row_width=1)
 kb_dream.add(
     InlineKeyboardButton("DREAM MOD 1 день | 200Р", callback_data="buy_t:DREAM MOD 1 день:200:dream"),
@@ -165,6 +169,7 @@ kb_zmod.add(
     InlineKeyboardButton("ZMOD 60 дней | 1050Р", callback_data="buy_t:ZMOD 60 дней:1050:zmod"),
 )
 kb_zmod.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
+
 kb_magic_vip = InlineKeyboardMarkup(row_width=1)
 kb_magic_vip.add(
     InlineKeyboardButton("MAGIC VIP 1 день | 150Р", callback_data="buy_t:MAGIC VIP 1 день:150:magic_vip"),
@@ -197,6 +202,7 @@ kb_certificate_oxide.add(
     InlineKeyboardButton("G BOX M10 | 2050Р", callback_data="buy_t:G BOX M10 OXIDE:2050:cert_ox"),
 )
 kb_certificate_oxide.add(InlineKeyboardButton("Назад", callback_data="oxide_ios"))
+
 @dp.message_handler(commands=['start'])
 async def start(message: types.Message):
     await message.answer("RATCHEATSHOP\n\nВыберите раздел:", reply_markup=kb_menu)
@@ -240,74 +246,16 @@ async def oxide_android(callback: types.CallbackQuery):
 async def oxide_ios(callback: types.CallbackQuery):
     await callback.message.edit_text("Выберите продукт:", reply_markup=kb_oxide_ios)
     await callback.answer()
-  CITATA = (
-    "Наводка (150 метро) - данная функция помогает навестись на голову или тело противника 🔮\n\n"
-    "👄 Подсветка людей - функция с помощью которой вы сможете видеть своих противников через стены (пример в видео обзоре)\n\n"
-    "🎁 СБОРКА ОБЛАДАЕТ СИЛЬНЕЙШИМ УРОВНЕМ БЕЗОПАСНОСТИ 💀\n\n"
-    "🐾 Совместим с устройствами Android от 9 до 16, Для устройств 32/64 BIT, Поддерживаемые входы: Twitter, Facebook, гостевой, номер и вход по email, Рут права не требуются.\n\n"
-    "🐾 Работает в МЕТРО, Classic и остальных режимах для версий Global, Korea, VNG, Taiwan"
+
+CITATA = (
+    "Наводка (150 метро) - данная функция помогает навестись на голову или тело противника\n\n"
+    "Подсветка людей - функция с помощью которой вы сможете видеть своих противников через стены (пример в видео обзоре)\n\n"
+    "СБОРКА ОБЛАДАЕТ СИЛЬНЕЙШИМ УРОВНЕМ БЕЗОПАСНОСТИ\n\n"
+    "Совместим с устройствами Android от 9 до 16, Для устройств 32/64 BIT, Поддерживаемые входы: Twitter, Facebook, гостевой, номер и вход по email, Рут права не требуются.\n\n"
+    "Работает в МЕТРО, Classic и остальных режимах для версий Global, Korea, VNG, Taiwan"
 )
 
-@dp.callback_query_handler(lambda c: c.data == "cheat:zolo")
-async def zolo(callback: types.CallbackQuery):
-    text = "ZOLO\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_zolo)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:watt")
-async def watt(callback: types.CallbackQuery):
-    text = "WATT MOD\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_watt)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:maximus")
-async def maximus(callback: types.CallbackQuery):
-    text = "MAXIMUS\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_maximus)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:inferno")
-async def inferno(callback: types.CallbackQuery):
-    text = "INFERNO PREMIUM\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_inferno)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:nasa")
-async def nasa(callback: types.CallbackQuery):
-    text = "NASA\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_nasa)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:jarvis")
-async def jarvis(callback: types.CallbackQuery):
-    text = "JARVIS MOD\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_jarvis)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:dream")
-async def dream(callback: types.CallbackQuery):
-    text = "DREAM MOD\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_dream)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:altron")
-async def altron(callback: types.CallbackQuery):
-    text = "ALTRON\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_altron)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:dexo")
-async def dexo(callback: types.CallbackQuery):
-    text = "DEXO\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_dexo)
-    await callback.answer()
-
-@dp.callback_query_handler(lambda c: c.data == "cheat:zmod")
-async def zmod(callback: types.CallbackQuery):
-    text = "ZMOD\n\n" + CITATA + "\n\n🔔 Статус софта: Безопасен"
-    await callback.message.edit_text(text, reply_markup=kb_zmod)
-    await callback.answer()
-  MAGIC_CITATA = (
+MAGIC_CITATA = (
     "MAGIC - приватный чит для OXIDE с информативными визуалами, гибкой настройкой и стабильной работой.\n\n"
     "Включает продвинутый ESP с отображением игроков, лута, ресурсов, построек, транспорта.\n\n"
     "Aimbot поддерживает настройку FOV, плавности, дистанции и проверки видимости.\n\n"
@@ -323,21 +271,81 @@ ULTIMA_CITATA = (
     "Работает во всех режимах"
 )
 
+@dp.callback_query_handler(lambda c: c.data == "cheat:zolo")
+async def zolo(callback: types.CallbackQuery):
+    text = "ZOLO\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_zolo)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:watt")
+async def watt(callback: types.CallbackQuery):
+    text = "WATT MOD\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_watt)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:maximus")
+async def maximus(callback: types.CallbackQuery):
+    text = "MAXIMUS\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_maximus)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:inferno")
+async def inferno(callback: types.CallbackQuery):
+    text = "INFERNO PREMIUM\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_inferno)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:nasa")
+async def nasa(callback: types.CallbackQuery):
+    text = "NASA\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_nasa)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:jarvis")
+async def jarvis(callback: types.CallbackQuery):
+    text = "JARVIS MOD\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_jarvis)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:dream")
+async def dream(callback: types.CallbackQuery):
+    text = "DREAM MOD\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_dream)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:altron")
+async def altron(callback: types.CallbackQuery):
+    text = "ALTRON\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_altron)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:dexo")
+async def dexo(callback: types.CallbackQuery):
+    text = "DEXO\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_dexo)
+    await callback.answer()
+
+@dp.callback_query_handler(lambda c: c.data == "cheat:zmod")
+async def zmod(callback: types.CallbackQuery):
+    text = "ZMOD\n\n" + CITATA + "\n\nСтатус софта: Безопасен"
+    await callback.message.edit_text(text, reply_markup=kb_zmod)
+    await callback.answer()
+
 @dp.callback_query_handler(lambda c: c.data == "cheat:magic_vip")
 async def magic_vip(callback: types.CallbackQuery):
-    text = "MAGIC VIP\n\n" + MAGIC_CITATA + "\n\n🔔 Статус софта: Безопасен"
+    text = "MAGIC VIP\n\n" + MAGIC_CITATA + "\n\nСтатус софта: Безопасен"
     await callback.message.edit_text(text, reply_markup=kb_magic_vip)
     await callback.answer()
 
 @dp.callback_query_handler(lambda c: c.data == "cheat:magic_lite")
 async def magic_lite(callback: types.CallbackQuery):
-    text = "MAGIC LITE\n\n" + MAGIC_CITATA + "\n\n🔔 Статус софта: Безопасен"
+    text = "MAGIC LITE\n\n" + MAGIC_CITATA + "\n\nСтатус софта: Безопасен"
     await callback.message.edit_text(text, reply_markup=kb_magic_lite)
     await callback.answer()
 
 @dp.callback_query_handler(lambda c: c.data == "cheat:ultima")
 async def ultima(callback: types.CallbackQuery):
-    text = "ULTIMA\n\n" + ULTIMA_CITATA + "\n\n🔔 Статус софта: Безопасен"
+    text = "ULTIMA\n\n" + ULTIMA_CITATA + "\n\nСтатус софта: Безопасен"
     await callback.message.edit_text(text, reply_markup=kb_ultima)
     await callback.answer()
 
@@ -349,7 +357,7 @@ async def certificate_oxide(callback: types.CallbackQuery):
         "Если Apple не отзывает - работает до года\n\n"
         "Тарифы:\n"
         "M1 - 500Р\nM3 - 1000Р\nM6 - 1500Р\nM10 - 2000Р\n\n"
-        "🔔 Статус софта: Безопасен"
+        "Статус софта: Безопасен"
     )
     await callback.message.edit_text(text, reply_markup=kb_certificate_oxide)
     await callback.answer()
