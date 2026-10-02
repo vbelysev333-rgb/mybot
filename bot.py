@@ -5,7 +5,7 @@ from aiogram import executor
 
 BOT_TOKEN = "8736006180:AAFJQ6jHk4zetE107KLSi0SLJx2cQB53fXk"
 CHANNEL_LINK = "https://t.me/RATCHEATSHOP"
-SUPPORT_LINK = "https://t.me/RATCHEATSHOP1"
+SUPPORT_LINK = "https://t.me/nezaba"
 
 logging.basicConfig(level=logging.INFO)
 
@@ -15,7 +15,7 @@ dp = Dispatcher(bot)
 kb_menu = InlineKeyboardMarkup(row_width=2)
 kb_menu.add(
     InlineKeyboardButton("Каталог", callback_data="catalog"),
-    InlineKeyboardButton("Отзывы / файлы", callback_data="reviews"),
+    InlineKeyboardButton("Отзывы", callback_data="reviews"),
 )
 kb_menu.add(InlineKeyboardButton("Поддержка", url=SUPPORT_LINK))
 
@@ -66,42 +66,42 @@ kb_oxide_ios.add(InlineKeyboardButton("Назад", callback_data="oxide"))
 
 kb_zolo = InlineKeyboardMarkup(row_width=1)
 kb_zolo.add(
-    InlineKeyboardButton("ZOLO 1 день | 150Р", callback_data="buy_t:ZOLO 1 день:150:zolo"),
-    InlineKeyboardButton("ZOLO 3 дня | 200Р", callback_data="buy_t:ZOLO 3 дня:200:zolo"),
-    InlineKeyboardButton("ZOLO 7 дней | 300Р", callback_data="buy_t:ZOLO 7 дней:300:zolo"),
-    InlineKeyboardButton("ZOLO 14 дней | 500Р", callback_data="buy_t:ZOLO 14 дней:500:zolo"),
-    InlineKeyboardButton("ZOLO 30 дней | 750Р", callback_data="buy_t:ZOLO 30 дней:750:zolo"),
-    InlineKeyboardButton("ZOLO 60 дней | 950Р", callback_data="buy_t:ZOLO 60 дней:950:zolo"),
+    InlineKeyboardButton("ZOLO 1 день | 100Р", callback_data="buy_t:ZOLO 1 день:100:zolo"),
+    InlineKeyboardButton("ZOLO 3 дня | 150Р", callback_data="buy_t:ZOLO 3 дня:150:zolo"),
+    InlineKeyboardButton("ZOLO 7 дней | 250Р", callback_data="buy_t:ZOLO 7 дней:250:zolo"),
+    InlineKeyboardButton("ZOLO 14 дней | 450Р", callback_data="buy_t:ZOLO 14 дней:450:zolo"),
+    InlineKeyboardButton("ZOLO 30 дней | 650Р", callback_data="buy_t:ZOLO 30 дней:650:zolo"),
+    InlineKeyboardButton("ZOLO 60 дней | 850Р", callback_data="buy_t:ZOLO 60 дней:850:zolo"),
 )
 kb_zolo.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
 
 kb_watt = InlineKeyboardMarkup(row_width=1)
 kb_watt.add(
-    InlineKeyboardButton("WATT MOD 1 день | 100Р", callback_data="buy_t:WATT MOD 1 день:100:watt"),
-    InlineKeyboardButton("WATT MOD 3 дня | 200Р", callback_data="buy_t:WATT MOD 3 дня:200:watt"),
-    InlineKeyboardButton("WATT MOD 7 дней | 350Р", callback_data="buy_t:WATT MOD 7 дней:350:watt"),
-    InlineKeyboardButton("WATT MOD 14 дней | 550Р", callback_data="buy_t:WATT MOD 14 дней:550:watt"),
+    InlineKeyboardButton("WATT MOD 1 день | Нету в наличии", callback_data="buy_t:WATT MOD 1 день:0:watt"),
+    InlineKeyboardButton("WATT MOD 3 дня | 0", callback_data="buy_t:WATT MOD 3 дня:0:watt"),
+    InlineKeyboardButton("WATT MOD 7 дней | 0Р", callback_data="buy_t:WATT MOD 7 дней:0:watt"),
+    InlineKeyboardButton("WATT MOD 14 дней | 550Р", callback_data="buy_t:WATT MOD 14 дней:0:watt"),
 )
 kb_watt.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
 
 kb_maximus = InlineKeyboardMarkup(row_width=1)
 kb_maximus.add(
-    InlineKeyboardButton("MAXIMUS 1 день | 200Р", callback_data="buy_t:MAXIMUS 1 день:200:maximus"),
-    InlineKeyboardButton("MAXIMUS 3 дня | 300Р", callback_data="buy_t:MAXIMUS 3 дня:300:maximus"),
-    InlineKeyboardButton("MAXIMUS 7 дней | 550Р", callback_data="buy_t:MAXIMUS 7 дней:550:maximus"),
-    InlineKeyboardButton("MAXIMUS 14 дней | 750Р", callback_data="buy_t:MAXIMUS 14 дней:750:maximus"),
-    InlineKeyboardButton("MAXIMUS 30 дней | 1050Р", callback_data="buy_t:MAXIMUS 30 дней:1050:maximus"),
-    InlineKeyboardButton("MAXIMUS 60 дней | 1650Р", callback_data="buy_t:MAXIMUS 60 дней:1650:maximus"),
+    InlineKeyboardButton("MAXIMUS 1 день | 150Р", callback_data="buy_t:MAXIMUS 1 день:150:maximus"),
+    InlineKeyboardButton("MAXIMUS 3 дня | 200Р", callback_data="buy_t:MAXIMUS 3 дня:200:maximus"),
+    InlineKeyboardButton("MAXIMUS 7 дней | 450Р", callback_data="buy_t:MAXIMUS 7 дней:450:maximus"),
+    InlineKeyboardButton("MAXIMUS 14 дней | 600Р", callback_data="buy_t:MAXIMUS 14 дней:600:maximus"),
+    InlineKeyboardButton("MAXIMUS 30 дней | 950Р", callback_data="buy_t:MAXIMUS 30 дней:950:maximus"),
+    InlineKeyboardButton("MAXIMUS 60 дней | 1350Р", callback_data="buy_t:MAXIMUS 60 дней:1350:maximus"),
 )
 kb_maximus.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
 
 kb_inferno = InlineKeyboardMarkup(row_width=1)
 kb_inferno.add(
-    InlineKeyboardButton("INFERNO 1 день | 220Р", callback_data="buy_t:INFERNO 1 день:220:inferno"),
-    InlineKeyboardButton("INFERNO 3 дня | 300Р", callback_data="buy_t:INFERNO 3 дня:300:inferno"),
-    InlineKeyboardButton("INFERNO 7 дней | 450Р", callback_data="buy_t:INFERNO 7 дней:450:inferno"),
-    InlineKeyboardButton("INFERNO 30 дней | 750Р", callback_data="buy_t:INFERNO 30 дней:750:inferno"),
-    InlineKeyboardButton("INFERNO 60 дней | 1650Р", callback_data="buy_t:INFERNO 60 дней:1650:inferno"),
+    InlineKeyboardButton("INFERNO 1 день | 150Р", callback_data="buy_t:INFERNO 1 день:150:inferno"),
+    InlineKeyboardButton("INFERNO 3 дня | 250", callback_data="buy_t:INFERNO 3 дня:250:inferno"),
+    InlineKeyboardButton("INFERNO 7 дней | 350Р", callback_data="buy_t:INFERNO 7 дней:350:inferno"),
+    InlineKeyboardButton("INFERNO 30 дней | 550Р", callback_data="buy_t:INFERNO 30 дней:550:inferno"),
+    InlineKeyboardButton("INFERNO 60 дней | 1250Р", callback_data="buy_t:INFERNO 60 дней:1250:inferno"),
 )
 kb_inferno.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
 
@@ -117,12 +117,12 @@ kb_nasa.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
 
 kb_jarvis = InlineKeyboardMarkup(row_width=1)
 kb_jarvis.add(
-    InlineKeyboardButton("JARVIS MOD 1 день | 170Р", callback_data="buy_t:JARVIS MOD 1 день:170:jarvis"),
-    InlineKeyboardButton("JARVIS MOD 3 дня | 250Р", callback_data="buy_t:JARVIS MOD 3 дня:250:jarvis"),
-    InlineKeyboardButton("JARVIS MOD 7 дней | 300Р", callback_data="buy_t:JARVIS MOD 7 дней:300:jarvis"),
-    InlineKeyboardButton("JARVIS MOD 14 дней | 550Р", callback_data="buy_t:JARVIS MOD 14 дней:550:jarvis"),
-    InlineKeyboardButton("JARVIS MOD 30 дней | 850Р", callback_data="buy_t:JARVIS MOD 30 дней:850:jarvis"),
-    InlineKeyboardButton("JARVIS MOD 60 дней | 1150Р", callback_data="buy_t:JARVIS MOD 60 дней:1150:jarvis"),
+    InlineKeyboardButton("JARVIS MOD 1 день | 120Р", callback_data="buy_t:JARVIS MOD 1 день:120:jarvis"),
+    InlineKeyboardButton("JARVIS MOD 3 дня | 150Р", callback_data="buy_t:JARVIS MOD 3 дня:150:jarvis"),
+    InlineKeyboardButton("JARVIS MOD 7 дней |250", callback_data="buy_t:JARVIS MOD 7 дней:250:jarvis"),
+    InlineKeyboardButton("JARVIS MOD 14 дней | 450Р", callback_data="buy_t:JARVIS MOD 14 дней:450:jarvis"),
+    InlineKeyboardButton("JARVIS MOD 30 дней | 550Р", callback_data="buy_t:JARVIS MOD 30 дней:550:jarvis"),
+    InlineKeyboardButton("JARVIS MOD 60 дней | 1000Р", callback_data="buy_t:JARVIS MOD 60 дней:1000:jarvis"),
 )
 kb_jarvis.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
 
@@ -173,16 +173,16 @@ kb_zmod.add(InlineKeyboardButton("Назад", callback_data="pubg_android"))
 kb_magic_vip = InlineKeyboardMarkup(row_width=1)
 kb_magic_vip.add(
     InlineKeyboardButton("MAGIC VIP 1 день | 150Р", callback_data="buy_t:MAGIC VIP 1 день:150:magic_vip"),
-    InlineKeyboardButton("MAGIC VIP 7 дней | 1550Р", callback_data="buy_t:MAGIC VIP 7 дней:1550:magic_vip"),
-    InlineKeyboardButton("MAGIC VIP 14 дней | 2550Р", callback_data="buy_t:MAGIC VIP 14 дней:2550:magic_vip"),
+    InlineKeyboardButton("MAGIC VIP 7 дней | 1250Р", callback_data="buy_t:MAGIC VIP 7 дней:1250:magic_vip"),
+    InlineKeyboardButton("MAGIC VIP 14 дней | 2250Р", callback_data="buy_t:MAGIC VIP 14 дней:2250:magic_vip"),
 )
 kb_magic_vip.add(InlineKeyboardButton("Назад", callback_data="oxide_android"))
 
 kb_magic_lite = InlineKeyboardMarkup(row_width=1)
 kb_magic_lite.add(
-    InlineKeyboardButton("MAGIC LITE 1 день | 250Р", callback_data="buy_t:MAGIC LITE 1 день:250:magic_lite"),
-    InlineKeyboardButton("MAGIC LITE 7 дней | 1150Р", callback_data="buy_t:MAGIC LITE 7 дней:1150:magic_lite"),
-    InlineKeyboardButton("MAGIC LITE 14 дней | 1650Р", callback_data="buy_t:MAGIC LITE 14 дней:1650:magic_lite"),
+    InlineKeyboardButton("MAGIC LITE 1 день | 100Р", callback_data="buy_t:MAGIC LITE 1 день:100:magic_lite"),
+    InlineKeyboardButton("MAGIC LITE 7 дней | 1000Р", callback_data="buy_t:MAGIC LITE 7 дней:1000:magic_lite"),
+    InlineKeyboardButton("MAGIC LITE 14 дней | 1250Р", callback_data="buy_t:MAGIC LITE 14 дней:1250:magic_lite"),
 )
 kb_magic_lite.add(InlineKeyboardButton("Назад", callback_data="oxide_android"))
 
@@ -219,7 +219,7 @@ async def catalog(callback: types.CallbackQuery):
 
 @dp.callback_query_handler(lambda c: c.data == "reviews")
 async def reviews(callback: types.CallbackQuery):
-    await callback.message.answer("Отзывы и файлы: " + CHANNEL_LINK)
+    await callback.message.answer("Отзывы : " + CHANNEL_LINK)
     await callback.answer()
 
 @dp.callback_query_handler(lambda c: c.data == "pubg")
